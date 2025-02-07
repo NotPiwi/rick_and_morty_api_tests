@@ -1,10 +1,10 @@
 package com.rickymorty.tests;
 
-import com.rickymorty.api.LocationApi;
+import com.rickymorty.models.LocationApi;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class LocationApiTest {
+public class LocationApiTest extends BaseTest{
 
     private LocationApi locationApi;
 
@@ -14,12 +14,17 @@ public class LocationApiTest {
     }
     @Test
     public void testStatusCode() {
+        logger.info("🔍 Ejecutando testLocationStatus...");
         locationApi.getFirstLocationAndVerifyStatus();
     }
-    @Test public void testResponseBody() {
+    @Test
+    public void testResponseBody() {
+        logger.info("🔍 Ejecutando testLocationBody...");
         locationApi.getFirstLocationAndVerifyBody();
     }
-    @Test public void testResponseHeaders() {
+    @Test
+    public void testResponseHeaders() {
+        logger.info("🔍 Ejecutando testLocationHeaders...");
         locationApi.getFirstHeaderAndVerify();
     }
 }

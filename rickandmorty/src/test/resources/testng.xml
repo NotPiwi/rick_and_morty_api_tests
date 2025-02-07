@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="RickAndMortyAPITests" parallel="false">
+    <listeners>
+        <listener class-name="com.rickymorty.listeners.TestListener"/>
+    </listeners>
+    <test name="API Tests">
+        <classes>
+            <class name="com.rickymorty.tests.CharacterApiTest"/>
+            <class name="com.rickymorty.tests.EpisodeApiTest"/>
+            <class name="com.rickymorty.tests.LocationApiTest"/>
+        </classes>
+    </test>
+</suite>
