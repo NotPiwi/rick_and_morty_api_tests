@@ -34,4 +34,9 @@ public class CharacterApi{
         Response response = baseApi.getElementByid("/character/", 1);
         apiValidator.verifyHeader(response);
     }
+
+    public void invalidTest(){
+        Response response = baseApi.getElementByid("/character/", 99999);
+        apiValidator.verifyStatusCode(response,200);
+    }
 }

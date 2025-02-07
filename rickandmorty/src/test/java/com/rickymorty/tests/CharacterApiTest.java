@@ -2,6 +2,7 @@ package com.rickymorty.tests;
 
 import com.rickymorty.models.CharacterApi;
 
+import io.restassured.response.Response;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -28,4 +29,10 @@ public class CharacterApiTest extends BaseTest{
         logger.info("🔍 Ejecutando testCharacterHeaders...");
         characterApi.getFirstHeaderAndVerify();
     }
+    @Test
+    public void testCharacterFail() {
+        logger.info("🔍 Ejecutando testCharacterFail...");
+        characterApi.invalidTest();
+    }
+
 }
