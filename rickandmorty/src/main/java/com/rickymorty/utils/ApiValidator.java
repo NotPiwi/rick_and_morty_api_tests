@@ -31,7 +31,7 @@ public class ApiValidator {
         assertEquals(contentType, "application/json; charset=utf-8", "El Content-Type no es correcto");
     }
 
-    public void verifyCharacterContent(Map<String, Object> actual, Map<String, Object> expected) {
+    public void verifyJsonContent(Map<String, Object> actual, Map<String, Object> expected) {
         for (Map.Entry<String, Object> entry : expected.entrySet()) {
             Object actualValue = actual.get(entry.getKey());
             if (!entry.getValue().equals(actualValue)) {

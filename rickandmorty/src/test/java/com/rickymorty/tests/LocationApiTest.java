@@ -24,4 +24,20 @@ public class LocationApiTest extends BaseTest{
     public void testLocationHeaders() {
         locationApi.getFirstHeaderAndVerify();
     }
+    @Test
+    public void testInvalidLocation(){ //Falla intencionalmente (locacion no existente)
+        logger.info("🔍 Ejecutando testInvalidLocation...");
+        locationApi.invalidLocationTest();
+    }
+    @Test
+    public void location123Content(){
+        logger.info("🔍 Ejecutando location123Content para verificar el contenido del location 123...");
+        locationApi.verifyLocation123Content();
+    }
+    @Test
+    public void testLocation1ShouldHaveMarsFailure() {
+        logger.info("🔍 Ejecutando testLocation1ShouldHaveMarsFailure (este test debe fallar)...");
+        locationApi.verifyLocation1ShouldHaveMars();
+    }
+
 }
