@@ -35,9 +35,9 @@ public class ApiValidator {
         for (Map.Entry<String, Object> entry : expected.entrySet()) {
             Object actualValue = actual.get(entry.getKey());
             if (!entry.getValue().equals(actualValue)) {
-                logger.error("❌ Error en campo '{}': esperado '{}', pero se obtuvo '{}'", entry.getKey(), entry.getValue(), actualValue);
+                logger.error("     ❌ Error en campo '{}': esperado '{}', pero se obtuvo '{}'", entry.getKey(), entry.getValue(), actualValue);
             } else {
-                logger.info("✅ Campo '{}' validado correctamente: '{}'", entry.getKey(), actualValue);
+                logger.info("     ✅ Campo '{}' validado correctamente: '{}'", entry.getKey(), actualValue);
             }
             assertEquals(actual.get(entry.getKey()), entry.getValue(), "El campo " + entry.getKey() + " no coincide");
         }

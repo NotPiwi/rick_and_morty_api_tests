@@ -12,22 +12,22 @@ public class TestListener implements ITestListener {
 
     @Override
     public void onTestStart(ITestResult result) {
-        logger.info("🦍 Iniciando prueba: " + result.getName());
+        logger.info("  🗣️ Iniciando prueba: " + result.getName());
     }
 
     @Override
     public void onTestSuccess(ITestResult result) {
-        logger.info("✅ Prueba exitosa: " + result.getName());
+        logger.info("  ✅ Prueba exitosa: " + result.getName());
     }
 
     @Override
     public void onTestFailure(ITestResult result) {
-        logger.error("❌ Test fallido: " + result.getName());
+        logger.error("  ❌ Test fallido: " + result.getName());
     }
 
     @Override
     public void onTestSkipped(ITestResult result) {
-        logger.warn("⚠️ Prueba omitida: " + result.getName());
+        logger.warn("  ⚠️ Prueba omitida: " + result.getName());
     }
 
     @Override

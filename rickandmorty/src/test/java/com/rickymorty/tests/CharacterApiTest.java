@@ -15,28 +15,20 @@ public class CharacterApiTest extends BaseTest{
         characterApi = new CharacterApi();
     }
     @Test
-    public void testStatusCode() {
-        logger.info("🔍 Ejecutando testCharacterStatus...");
+    public void testCharacterStatusCode() {
         characterApi.getFirstCharacterAndVerifyStatus();
     }
     @Test
-    public void testResponseBody() {
-        logger.info("🔍 Ejecutando testCharacterBody...");
+    public void testCharacterBody() {
         characterApi.getFirstCharacterAndVerifyBody();
     }
     @Test
-    public void testResponseHeaders() {
-        logger.info("🔍 Ejecutando testCharacterHeaders...");
+    public void testCharacterHeaders() {
         characterApi.getFirstHeaderAndVerify();
     }
     @Test
-    public void testCharacterFail() {
-        logger.info("🔍 Ejecutando testCharacterFail...");
-        characterApi.invalidTest();
-    }
-    @Test
     public void testCharacter183Content() {
-        logger.info("Verificando contenido del personaje con ID 183 (Johnny Depp)...");
+        logger.info("   🦍 Verificando contenido del personaje con ID 183 (Johnny Depp)...");
         characterApi.verifyCharacter183Content();
     }
 

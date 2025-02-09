@@ -13,18 +13,15 @@ public class LocationApiTest extends BaseTest{
         locationApi = new LocationApi();
     }
     @Test
-    public void testStatusCode() {
-        logger.info("🔍 Ejecutando testLocationStatus...");
+    public void testLocationStatusCode() {
         locationApi.getFirstLocationAndVerifyStatus();
     }
     @Test
-    public void testResponseBody() {
-        logger.info("🔍 Ejecutando testLocationBody...");
+    public void testLocationBody() {
         locationApi.getFirstLocationAndVerifyBody();
     }
     @Test
-    public void testResponseHeaders() {
-        logger.info("🔍 Ejecutando testLocationHeaders...");
+    public void testLocationHeaders() {
         locationApi.getFirstHeaderAndVerify();
     }
 }

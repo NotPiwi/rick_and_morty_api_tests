@@ -14,18 +14,15 @@ public class EpisodeApiTest extends BaseTest{
         episodeApi = new EpisodeApi();
     }
     @Test
-    public void testStatusCode() {
-        logger.info("🔍 Ejecutando testEpisodeStatus...");
+    public void testEpisodeStatusCode() {
         episodeApi.getFirstEpisodeAndVerifyStatus();
     }
     @Test
-    public void testResponseBody() {
-        logger.info("🔍 Ejecutando testEpisodeBody...");
+    public void testEpisodeBody() {
         episodeApi.getFirstEpisodeAndVerifyBody();
     }
     @Test
-    public void testResponseHeaders() {
-        logger.info("🔍 Ejecutando testEpisodeHeaders...");
+    public void testEpisodeHeaders() {
         episodeApi.getFirstHeaderAndVerify();
     }
 }

@@ -41,11 +41,6 @@ public class CharacterApi {
         apiValidator.verifyHeader(response);
     }
 
-    public void invalidTest(){
-        Response response = baseApi.getElementByid("/character/", 99999);
-        apiValidator.verifyStatusCode(response, 200);
-    }
-
     /**
      * Verifica que la respuesta para el personaje con ID 183 (Johnny Depp) contenga los siguientes campos y valores:
      *   "id": 183,
