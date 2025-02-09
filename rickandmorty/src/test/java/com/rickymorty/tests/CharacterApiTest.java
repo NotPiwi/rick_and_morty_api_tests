@@ -34,5 +34,10 @@ public class CharacterApiTest extends BaseTest{
         logger.info("🔍 Ejecutando testCharacterFail...");
         characterApi.invalidTest();
     }
+    @Test
+    public void testCharacter183Content() {
+        logger.info("Verificando contenido del personaje con ID 183 (Johnny Depp)...");
+        characterApi.verifyCharacter183Content();
+    }
 
 }

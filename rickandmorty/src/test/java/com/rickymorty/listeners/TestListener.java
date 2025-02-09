@@ -40,3 +40,4 @@ public class TestListener implements ITestListener {
         logger.info("🏁 Finalizando suite de pruebas: " + context.getName());
     }
 }
+
