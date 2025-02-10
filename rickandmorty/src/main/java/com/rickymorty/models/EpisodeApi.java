@@ -38,10 +38,6 @@ public class EpisodeApi {
         Response response = baseApi.getElementByid("/episode/",1);
         apiValidator.verifyHeader(response);
     }
-    public void invalidEpisodeTest(){
-        Response response = baseApi.getElementByid("/episode/", 666);
-        apiValidator.verifyStatusCode(response, 200);
-    }
     /**
      * Verifica el contenido del episodio 5 (Meeseeks and Destroy) comprobando los siguientes campos:
      *   "id": 5,
@@ -78,18 +74,5 @@ public class EpisodeApi {
         Assert.assertEquals(characters.get(0), "https://rickandmortyapi.com/api/character/1", "El primer carácter no coincide");
         Assert.assertEquals(characters.get(1), "https://rickandmortyapi.com/api/character/2", "El segundo carácter no coincide");
         Assert.assertEquals(characters.get(characters.size()-1), "https://rickandmortyapi.com/api/character/400", "El último carácter no coincide");
-    }
-    /**
-     * Verifica que el episodio 5 contenga el character con ID 3.
-     * Este test debe fallar, ya que se espera que el character 3 NO esté presente.
-     */
-    public void verifyEpisode5ContainsCharacter3(){
-        Response response = baseApi.getElementByid("/episode/", 5);
-        apiValidator.verifyStatusCode(response, 200);
-        Map<String, Object> episode = response.jsonPath().getMap("");
-        List<String> characters = (List<String>) episode.get("characters");
-        // Se espera que el character con ID 3 NO este presente.
-        Assert.assertTrue(characters.contains("https://rickandmortyapi.com/api/character/3"),
-                "El episodio 5 no contiene el character 3, pero ya se esperaba que no lo contuviera");
     }
 }

@@ -19,25 +19,17 @@ public class EpisodeApiTest extends BaseTest{
     }
     @Test
     public void testEpisodeBody() {
+        logger.info("   🦍 Verificando los campos del body del episodio 1...");
         episodeApi.getFirstEpisodeAndVerifyBody();
     }
     @Test
     public void testEpisodeHeaders() {
+        logger.info("   🦍 Verificando el header del episodio 1...");
         episodeApi.getFirstHeaderAndVerify();
     }
     @Test
-    public void testEpisodeFail() { // Forzamos fallo con un episodio que no existe
-        logger.info("🔍 Ejecutando testEpisodeFail...");
-        episodeApi.invalidEpisodeTest();
-    }
-    @Test
     public void testEpisode5Content() {
-        logger.info("🔍 Ejecutando testEpisode5Content para verificar contenido del episodio 5...");
+        logger.info("   🦍 Verificando contenido del episodio 5...");
         episodeApi.verifyEpisode5Content();
-    }
-    @Test
-    public void testEpisode5ContainsCharacter3ShouldFail() { // Forzamos fallo con un character que no existe en el episodio 5
-        logger.info("🔍 Ejecutando testEpisode5ContainsCharacter3ShouldFail para verificar que el character 3 está presente (este test debe fallar)...");
-        episodeApi.verifyEpisode5ContainsCharacter3();
     }
 }

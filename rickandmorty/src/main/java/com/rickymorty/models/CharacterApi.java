@@ -69,16 +69,4 @@ public class CharacterApi {
 
         apiValidator.verifyJsonContent(character, expectedContent);
     }
-    /**
-     * Verifica intencionalmente que el location 1 tenga el nombre "Mars".
-     * Dado que la respuesta real es "Earth (C-137)", este test debe fallar.
-     */
-    public void verifyCharacterNotTheRock(){
-        Response response = baseApi.getElementByid("/character/", 183);
-        apiValidator.verifyStatusCode(response, 200);
-        Map<String, Object> location = response.jsonPath().getMap("");
-
-        // Intencionalmente falla si el nombre es distinto de "The Rock" (la respuesta real es "Johnny Deep")
-        Assert.assertEquals(location.get("name"), "The Rock", "El nombre no es 'The Rock' como se esperaba (test intencionalmente fallido)");
-    }
 }
